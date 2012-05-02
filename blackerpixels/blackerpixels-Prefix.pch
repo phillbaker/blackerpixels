@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'blackerpixels' target in the 'blackerpixels' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

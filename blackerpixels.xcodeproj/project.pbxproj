@@ -1,0 +1,295 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA78BA9F1551CF450014E8CD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA78BA9E1551CF450014E8CD /* Cocoa.framework */; };
+		FA78BAA11551CF450014E8CD /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA78BAA01551CF450014E8CD /* ScreenSaver.framework */; };
+		FA78BAAB1551CF450014E8CD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA78BAA91551CF450014E8CD /* InfoPlist.strings */; };
+		FA78BAAF1551CF450014E8CD /* blackerpixelsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA78BAAE1551CF450014E8CD /* blackerpixelsView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FA78BA9B1551CF450014E8CD /* blackerpixels.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blackerpixels.saver; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA78BA9E1551CF450014E8CD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		FA78BAA01551CF450014E8CD /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = System/Library/Frameworks/ScreenSaver.framework; sourceTree = SDKROOT; };
+		FA78BAA31551CF450014E8CD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		FA78BAA41551CF450014E8CD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FA78BAA51551CF450014E8CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FA78BAA81551CF450014E8CD /* blackerpixels-Info.plist */ = {isa = PBXFileReference; path = "blackerpixels-Info.plist"; sourceTree = "<group>"; };
+		FA78BAAA1551CF450014E8CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA78BAAC1551CF450014E8CD /* blackerpixels-Prefix.pch */ = {isa = PBXFileReference; path = "blackerpixels-Prefix.pch"; sourceTree = "<group>"; };
+		FA78BAAD1551CF450014E8CD /* blackerpixelsView.h */ = {isa = PBXFileReference; path = blackerpixelsView.h; sourceTree = "<group>"; };
+		FA78BAAE1551CF450014E8CD /* blackerpixelsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = blackerpixelsView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA78BA961551CF450014E8CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA78BA9F1551CF450014E8CD /* Cocoa.framework in Frameworks */,
+				FA78BAA11551CF450014E8CD /* ScreenSaver.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA78BA8E1551CF450014E8CD = {
+			isa = PBXGroup;
+			children = (
+				FA78BAA61551CF450014E8CD /* blackerpixels */,
+				FA78BA9D1551CF450014E8CD /* Frameworks */,
+				FA78BA9C1551CF450014E8CD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA78BA9C1551CF450014E8CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA78BA9B1551CF450014E8CD /* blackerpixels.saver */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA78BA9D1551CF450014E8CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA78BA9E1551CF450014E8CD /* Cocoa.framework */,
+				FA78BAA01551CF450014E8CD /* ScreenSaver.framework */,
+				FA78BAA21551CF450014E8CD /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA78BAA21551CF450014E8CD /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA78BAA31551CF450014E8CD /* AppKit.framework */,
+				FA78BAA41551CF450014E8CD /* CoreData.framework */,
+				FA78BAA51551CF450014E8CD /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		FA78BAA61551CF450014E8CD /* blackerpixels */ = {
+			isa = PBXGroup;
+			children = (
+				FA78BAAD1551CF450014E8CD /* blackerpixelsView.h */,
+				FA78BAAE1551CF450014E8CD /* blackerpixelsView.m */,
+				FA78BAA71551CF450014E8CD /* Supporting Files */,
+			);
+			path = blackerpixels;
+			sourceTree = "<group>";
+		};
+		FA78BAA71551CF450014E8CD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA78BAA81551CF450014E8CD /* blackerpixels-Info.plist */,
+				FA78BAA91551CF450014E8CD /* InfoPlist.strings */,
+				FA78BAAC1551CF450014E8CD /* blackerpixels-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FA78BA971551CF450014E8CD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		FA78BA9A1551CF450014E8CD /* blackerpixels */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA78BAB21551CF450014E8CD /* Build configuration list for PBXNativeTarget "blackerpixels" */;
+			buildPhases = (
+				FA78BA951551CF450014E8CD /* Sources */,
+				FA78BA961551CF450014E8CD /* Frameworks */,
+				FA78BA971551CF450014E8CD /* Headers */,
+				FA78BA981551CF450014E8CD /* Resources */,
+				FA78BA991551CF450014E8CD /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = blackerpixels;
+			productName = blackerpixels;
+			productReference = FA78BA9B1551CF450014E8CD /* blackerpixels.saver */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA78BA901551CF450014E8CD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = FA78BA931551CF450014E8CD /* Build configuration list for PBXProject "blackerpixels" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FA78BA8E1551CF450014E8CD;
+			productRefGroup = FA78BA9C1551CF450014E8CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA78BA9A1551CF450014E8CD /* blackerpixels */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA78BA981551CF450014E8CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA78BAAB1551CF450014E8CD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		FA78BA991551CF450014E8CD /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA78BA951551CF450014E8CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA78BAAF1551CF450014E8CD /* blackerpixelsView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FA78BAA91551CF450014E8CD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA78BAAA1551CF450014E8CD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA78BAB01551CF450014E8CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FA78BAB11551CF450014E8CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FA78BAB31551CF450014E8CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "blackerpixels/blackerpixels-Prefix.pch";
+				INFOPLIST_FILE = "blackerpixels/blackerpixels-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Debug;
+		};
+		FA78BAB41551CF450014E8CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "blackerpixels/blackerpixels-Prefix.pch";
+				INFOPLIST_FILE = "blackerpixels/blackerpixels-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA78BA931551CF450014E8CD /* Build configuration list for PBXProject "blackerpixels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA78BAB01551CF450014E8CD /* Debug */,
+				FA78BAB11551CF450014E8CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA78BAB21551CF450014E8CD /* Build configuration list for PBXNativeTarget "blackerpixels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA78BAB31551CF450014E8CD /* Debug */,
+				FA78BAB41551CF450014E8CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA78BA901551CF450014E8CD /* Project object */;
+}
