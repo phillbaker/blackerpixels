@@ -15,10 +15,39 @@
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
         if (! isPreview) {
-            [self dimDisplayNow];
+            NSLog(@"blackerpixels");
+            //[self dimDisplayNow];
+            [self turnOffDisplayNow];
         }
     }
     return self;
+}
+
+- (int) turnOffDisplayNow {
+    int kMaxDisplays = 16;
+    float brightness = 0.0f;
+    CFStringRef kDisplayBrightness = CFSTR(kIODisplayBrightnessKey);
+    
+    CGDirectDisplayID display[kMaxDisplays];
+    CGDisplayCount numDisplays;
+    CGDisplayErr err;
+    err = CGGetActiveDisplayList(kMaxDisplays, display, &numDisplays);
+    
+    for (CGDisplayCount i = 0; i < numDisplays; ++i) {
+        CGDirectDisplayID dspy = display[i];
+        CFDictionaryRef originalMode = CGDisplayCurrentMode(dspy);
+        if (originalMode == NULL)
+            continue;
+        io_service_t service = CGDisplayIOServicePort(dspy);
+
+                err = IODisplaySetFloatParameter(service, kNilOptions, kDisplayBrightness,
+                                                 brightness);
+                if (err != kIOReturnSuccess) {
+                    //do something
+                    NSLog(@"blackerpixels - error on setting");
+                }
+    }
+    return err;
 }
 
 - (int) dimDisplayNow {

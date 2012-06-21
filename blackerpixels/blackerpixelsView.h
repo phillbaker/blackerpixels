@@ -8,9 +8,12 @@
 
 #import <IOKit/IOKitLib.h>
 #import <ScreenSaver/ScreenSaver.h>
+#import <IOKit/graphics/IOGraphicsLib.h>
+#import <ApplicationServices/ApplicationServices.h>
 
 @interface blackerpixelsView : ScreenSaverView
 
 - (int) dimDisplayNow;
+- (int) turnOffDisplayNow;
 
 @end
