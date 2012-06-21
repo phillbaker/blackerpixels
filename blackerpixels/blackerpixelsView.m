@@ -14,9 +14,22 @@
 {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
-        [self setAnimationTimeInterval:1/30.0];
+        if (! isPreview) {
+            [self dimDisplayNow];
+        }
     }
     return self;
+}
+
+- (int) dimDisplayNow {
+    io_registry_entry_t reg = IORegistryEntryFromPath(kIOMasterPortDefault, "IOService:/IOResources/IODisplayWrangler");
+    if (reg) {
+        IORegistryEntrySetCFProperty(reg, CFSTR("IORequestIdle"), kCFBooleanTrue);
+        IOObjectRelease(reg);
+    } else {
+        return 1;
+    }
+    return 0;
 }
 
 - (void)startAnimation

@@ -11,6 +11,9 @@
 		FA78BAA11551CF450014E8CD /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA78BAA01551CF450014E8CD /* ScreenSaver.framework */; };
 		FA78BAAB1551CF450014E8CD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA78BAA91551CF450014E8CD /* InfoPlist.strings */; };
 		FA78BAAF1551CF450014E8CD /* blackerpixelsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA78BAAE1551CF450014E8CD /* blackerpixelsView.m */; };
+		FA78BAB61551D6E70014E8CD /* MachineSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA78BAB51551D6E70014E8CD /* MachineSettings.framework */; };
+		FA78BABC1551DC5C0014E8CD /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA78BABB1551DC5C0014E8CD /* IOKit.framework */; };
+		FAD6C3A61593417D00E889E3 /* brightness.c in Sources */ = {isa = PBXBuildFile; fileRef = FAD6C3A51593417D00E889E3 /* brightness.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,11 +23,14 @@
 		FA78BAA31551CF450014E8CD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		FA78BAA41551CF450014E8CD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FA78BAA51551CF450014E8CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		FA78BAA81551CF450014E8CD /* blackerpixels-Info.plist */ = {isa = PBXFileReference; path = "blackerpixels-Info.plist"; sourceTree = "<group>"; };
+		FA78BAA81551CF450014E8CD /* blackerpixels-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "blackerpixels-Info.plist"; sourceTree = "<group>"; };
 		FA78BAAA1551CF450014E8CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FA78BAAC1551CF450014E8CD /* blackerpixels-Prefix.pch */ = {isa = PBXFileReference; path = "blackerpixels-Prefix.pch"; sourceTree = "<group>"; };
-		FA78BAAD1551CF450014E8CD /* blackerpixelsView.h */ = {isa = PBXFileReference; path = blackerpixelsView.h; sourceTree = "<group>"; };
+		FA78BAAC1551CF450014E8CD /* blackerpixels-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "blackerpixels-Prefix.pch"; sourceTree = "<group>"; };
+		FA78BAAD1551CF450014E8CD /* blackerpixelsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blackerpixelsView.h; sourceTree = "<group>"; };
 		FA78BAAE1551CF450014E8CD /* blackerpixelsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = blackerpixelsView.m; sourceTree = "<group>"; };
+		FA78BAB51551D6E70014E8CD /* MachineSettings.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MachineSettings.framework; path = ../../../../../../System/Library/PrivateFrameworks/MachineSettings.framework; sourceTree = "<group>"; };
+		FA78BABB1551DC5C0014E8CD /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		FAD6C3A51593417D00E889E3 /* brightness.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = brightness.c; path = blackerpixels/brightness.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,8 +38,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA78BABC1551DC5C0014E8CD /* IOKit.framework in Frameworks */,
 				FA78BA9F1551CF450014E8CD /* Cocoa.framework in Frameworks */,
 				FA78BAA11551CF450014E8CD /* ScreenSaver.framework in Frameworks */,
+				FA78BAB61551D6E70014E8CD /* MachineSettings.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +51,7 @@
 		FA78BA8E1551CF450014E8CD = {
 			isa = PBXGroup;
 			children = (
+				FAD6C3A51593417D00E889E3 /* brightness.c */,
 				FA78BAA61551CF450014E8CD /* blackerpixels */,
 				FA78BA9D1551CF450014E8CD /* Frameworks */,
 				FA78BA9C1551CF450014E8CD /* Products */,
@@ -60,6 +69,8 @@
 		FA78BA9D1551CF450014E8CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA78BABB1551DC5C0014E8CD /* IOKit.framework */,
+				FA78BAB51551D6E70014E8CD /* MachineSettings.framework */,
 				FA78BA9E1551CF450014E8CD /* Cocoa.framework */,
 				FA78BAA01551CF450014E8CD /* ScreenSaver.framework */,
 				FA78BAA21551CF450014E8CD /* Other Frameworks */,
@@ -181,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA78BAAF1551CF450014E8CD /* blackerpixelsView.m in Sources */,
+				FAD6C3A61593417D00E889E3 /* brightness.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +231,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -240,7 +252,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -248,10 +260,17 @@
 		FA78BAB31551CF450014E8CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "blackerpixels/blackerpixels-Prefix.pch";
 				INFOPLIST_FILE = "blackerpixels/blackerpixels-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = saver;
 			};
@@ -260,10 +279,16 @@
 		FA78BAB41551CF450014E8CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "blackerpixels/blackerpixels-Prefix.pch";
 				INFOPLIST_FILE = "blackerpixels/blackerpixels-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = saver;
 			};
@@ -288,6 +313,7 @@
 				FA78BAB41551CF450014E8CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
