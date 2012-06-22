@@ -14,18 +14,27 @@
 {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
-        if (! isPreview) {
-            NSLog(@"blackerpixels");
+        //NSLog(@"blackerpixels");
+        if (!isPreview) {
+            NSLog(@"blackerpixels - execute");
             //[self dimDisplayNow];
-            [self turnOffDisplayNow];
+            origBrightness = [[NSMutableArray alloc] init];
+            [self storeBrightness];
+            
+            NSMutableArray* off = [[NSMutableArray alloc] init];
+            for (int i = 0; i < [origBrightness count]; i++) {
+                [off addObject:[NSNumber numberWithFloat:0.0f]];
+            }
+            [self setDisplaysBrightness:off];
+            NSLog(@"blackerpixels - turned off");
         }
     }
     return self;
 }
 
-- (int) turnOffDisplayNow {
+- (int) storeBrightness {
+    float brightness;
     int kMaxDisplays = 16;
-    float brightness = 0.0f;
     CFStringRef kDisplayBrightness = CFSTR(kIODisplayBrightnessKey);
     
     CGDirectDisplayID display[kMaxDisplays];
@@ -39,13 +48,46 @@
         if (originalMode == NULL)
             continue;
         io_service_t service = CGDisplayIOServicePort(dspy);
+        
+        err = IODisplayGetFloatParameter(service, kNilOptions, kDisplayBrightness,
+                                         &brightness);
+        if (err != kIOReturnSuccess) {
+            NSLog(@"blackerpixels - error on getting");
+        }
+        else {
+            NSLog(@"blackerpixels - getting %d at %f", i, brightness);
+            [origBrightness addObject:[NSNumber numberWithFloat:brightness]];
+        }
+    }
+    return err;
+}
 
-                err = IODisplaySetFloatParameter(service, kNilOptions, kDisplayBrightness,
-                                                 brightness);
-                if (err != kIOReturnSuccess) {
-                    //do something
-                    NSLog(@"blackerpixels - error on setting");
-                }
+- (int) setDisplaysBrightness:(NSMutableArray*)array {
+    int kMaxDisplays = 16;
+    //float brightness = 0.0f;
+    CFStringRef kDisplayBrightness = CFSTR(kIODisplayBrightnessKey);
+    
+    CGDirectDisplayID display[kMaxDisplays];
+    CGDisplayCount numDisplays;
+    CGDisplayErr err;
+    err = CGGetActiveDisplayList(kMaxDisplays, display, &numDisplays);
+    NSLog(@"blackerpixels - setting");
+    for (CGDisplayCount i = 0; i < [array count]; ++i) {
+        CGDirectDisplayID dspy = display[i];
+        CFDictionaryRef originalMode = CGDisplayCurrentMode(dspy);
+        if (originalMode == NULL)
+            continue;
+        io_service_t service = CGDisplayIOServicePort(dspy);
+        float brightness = [[array objectAtIndex:i] floatValue];
+        NSLog(@"blackerpixels - setting %d to %f", i, brightness);
+        err = IODisplaySetFloatParameter(service, 
+                                         kNilOptions, 
+                                         kDisplayBrightness, 
+                                         brightness);
+        if (err != kIOReturnSuccess) {
+            //do something
+            NSLog(@"blackerpixels - error on setting");
+        }
     }
     return err;
 }
@@ -69,6 +111,9 @@
 - (void)stopAnimation
 {
     [super stopAnimation];
+    //reset brightness
+    [self setDisplaysBrightness:origBrightness];
+    NSLog(@"blackerpixels - turned on");
 }
 
 - (void)drawRect:(NSRect)rect

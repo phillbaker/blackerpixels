@@ -11,9 +11,14 @@
 #import <IOKit/graphics/IOGraphicsLib.h>
 #import <ApplicationServices/ApplicationServices.h>
 
-@interface blackerpixelsView : ScreenSaverView
+@interface blackerpixelsView : ScreenSaverView {
+    //float origBrightness;
+    NSMutableArray *origBrightness;
+}
 
 - (int) dimDisplayNow;
-- (int) turnOffDisplayNow;
+- (int) storeBrightness;
+//- (int) setDisplayBrightness:(float)f;
+- (int) setDisplaysBrightness:(NSMutableArray*)array;
 
 @end
