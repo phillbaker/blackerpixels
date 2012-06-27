@@ -1,0 +1,12 @@
+== What this is
+
+A simple screensaver that turns off the screen by setting the brightness to 0.0 and then returning the brightness to its original state when the screensaver is deactivated. Based the infamous BlackenedPixels (http://b-l-a-c-k-o-p.com/BlackenedPixels.html), but updated to work for Mac OS X 10.4 to 10.6 on 32-bit and 64-bit systems. The original source isn't available, so this is a reimplementation.
+
+== License
+
+Released under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)
+http://creativecommons.org/licenses/by-nc-sa/3.0/
+
+== Compatibility
+
+Mac OS X 10.4 to 10.6 on 32-bit and 64-bit systems (i386 and x86-64). If not, tell me and I'll re-compile for your system.
