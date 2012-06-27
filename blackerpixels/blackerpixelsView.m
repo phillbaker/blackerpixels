@@ -3,7 +3,11 @@
 //  blackerpixels
 //
 //  Created by phill on 5/2/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Phillip Baker. All rights reserved.
+//
+//  Released under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)
+//  http://creativecommons.org/licenses/by-nc-sa/3.0/
+//
 //
 
 #import "blackerpixelsView.h"
@@ -17,7 +21,6 @@
         //NSLog(@"blackerpixels");
         if (!isPreview) {
             NSLog(@"blackerpixels - execute");
-            //[self dimDisplayNow];
             origBrightness = [[NSMutableArray alloc] init];
             [self storeBrightness];
             
@@ -90,17 +93,6 @@
         }
     }
     return err;
-}
-
-- (int) dimDisplayNow {
-    io_registry_entry_t reg = IORegistryEntryFromPath(kIOMasterPortDefault, "IOService:/IOResources/IODisplayWrangler");
-    if (reg) {
-        IORegistryEntrySetCFProperty(reg, CFSTR("IORequestIdle"), kCFBooleanTrue);
-        IOObjectRelease(reg);
-    } else {
-        return 1;
-    }
-    return 0;
 }
 
 - (void)startAnimation

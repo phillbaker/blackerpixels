@@ -3,7 +3,10 @@
 //  blackerpixels
 //
 //  Created by phill on 5/2/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Phillip Baker. All rights reserved.
+// 
+//  Released under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)
+//  http://creativecommons.org/licenses/by-nc-sa/3.0/
 //
 
 #import <IOKit/IOKitLib.h>
@@ -18,7 +21,6 @@
 
 - (int) dimDisplayNow;
 - (int) storeBrightness;
-//- (int) setDisplayBrightness:(float)f;
 - (int) setDisplaysBrightness:(NSMutableArray*)array;
 
 @end
